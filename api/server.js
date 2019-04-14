@@ -11,5 +11,5 @@ server.use(cors());
 server.get('/', (req, res) => {
   res.send('Welcome to the Jungle 🌴');
 });
-
+ 
 module.exports = server;
