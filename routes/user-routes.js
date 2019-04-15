@@ -64,7 +64,7 @@ router.post('/login', (req, res) => {
 //     })
 // })
 
-router.get('/:id/habits', (req, res) => {
+router.get('/:id/habits', authenticate, (req, res) => {
     const id = req.params.id
     db('users')
       .where({id})
