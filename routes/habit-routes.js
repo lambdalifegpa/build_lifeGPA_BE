@@ -4,7 +4,7 @@ const { authenticate } = require('../auth/authenticate');
 const db = require('../database/dbConfig')
 const Habit = require('../models/habits-model')
 
-router.post('/', authenticate, (req, res) => { 
+router.post('/', (req, res) => { 
     // Habit
     // .addHabit(req.body)
     db('habitss')
