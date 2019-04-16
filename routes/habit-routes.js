@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
         res.status(201).json(id)
     })
     .catch(err => {
-        res.status(500).json(err)
+        res.status(505).json(err)
     })
 })
 
