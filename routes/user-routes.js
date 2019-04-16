@@ -24,7 +24,7 @@ router.post('/register', (req, res) => {
             res.status(201).json({user, token})
         })
         .catch(err => {
-            res.status(505).json(err)
+            res.status(500).json(err)
         })
 })
 
@@ -50,18 +50,6 @@ router.post('/login', (req, res) => {
       });
   
   })
-
-// router.get('/:id', (req, res) => { // could be dangerous if all USER info is available when logged in.. true.. very dangerous
-//     const { id } = req.params
-//     Users
-//     .getUser(id)
-//     .then(user => {
-//         res.status(200).json(user);
-//     })
-//     .catch(error => {
-//         res.status(500).json(error);
-//     })
-// })
 
 router.get('/:id/habits', authenticate, (req, res) => {
     const id = req.params.id

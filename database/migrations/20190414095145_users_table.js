@@ -9,11 +9,11 @@ exports.up = function(knex, Promise) {
 
         users
             .string('first_name')
-            .notNullable();
+            // .notNullable();
 
         users
             .string('last_name')
-            .notNullable();
+            // .notNullable();
             
         users // username
           .string('username', 128)
