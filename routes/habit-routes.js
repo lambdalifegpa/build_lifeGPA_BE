@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const { authenticate } = require('../auth/authenticate');
 const db = require('../database/dbConfig')
+const Habit = require('../models/habits-model')
 
 router.post('/', authenticate, (req, res) => { 
-    db('habitss')
-    .insert(req.body)
+    Habit
+    .addHabit(req.body)
     .then(id => {
         res.status(201).json(id)
     })
@@ -15,7 +16,8 @@ router.post('/', authenticate, (req, res) => {
 })
 
 router.get('/', authenticate, (req, res) => {
-    db('habitss').then(habit => {
+    db('habitss')
+    .then(habit => {
         res.status(200).json(habit)
     }).catch(err => {
         res.status(500).json(err)
@@ -31,7 +33,7 @@ router.get('/:id', authenticate, (req, res) => {
         if (habit) {
           res.status(200).json(habit)
         } else {
-          res.status(404).json({ message: 'Project Not Found'})
+          res.status(404).json({ message: 'User Not Found'})
         }
       })
     .catch(err => {
