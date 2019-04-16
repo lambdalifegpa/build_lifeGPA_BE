@@ -4,11 +4,9 @@ const { authenticate } = require('../auth/authenticate');
 const db = require('../database/dbConfig')
 const Habit = require('../models/habits-model')
 
-router.post('/', (req, res) => { 
-    // Habit
-    // .addHabit(req.body)
-    db('habitss')
-    .insert(habit)
+router.post('/', authenticate, (req, res) => { 
+    Habit
+    .addHabit(req.body)
     .then(id => {
         res.status(201).json(id)
     })
