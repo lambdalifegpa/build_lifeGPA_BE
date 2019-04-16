@@ -24,7 +24,7 @@ router.post('/register', (req, res) => {
             res.status(201).json({user, token})
         })
         .catch(err => {
-            res.status(505).json(err)
+            res.status(500).json(err)
         })
 })
 
