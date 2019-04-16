@@ -31,7 +31,7 @@ router.get('/:id', authenticate, (req, res) => {
         if (habit) {
           res.status(200).json(habit)
         } else {
-          res.status(404).json({ message: 'Project Not Found'})
+          res.status(404).json({ message: 'User Not Found'})
         }
       })
     .catch(err => {

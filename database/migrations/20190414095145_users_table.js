@@ -7,6 +7,14 @@ exports.up = function(knex, Promise) {
         users // user_id
           .increments();
 
+        users
+            .string('first_name')
+            .notNullable();
+
+        users
+            .string('last_name')
+            .notNullable();
+            
         users // username
           .string('username', 128)
           .notNullable()
