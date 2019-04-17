@@ -3,10 +3,15 @@ exports.up = function(knex, Promise) {
         tbl.increments(); // id
         tbl.string('habit') // habit name
           .notNullable()
-        tbl.integer('user_id') // whatever
+        tbl.integer('user_id') // foreign key
             .notNullable()
             .references('id')
             .inTable('users')
+        tbl.date('createdAt')
+        tbl.date('lastCompleted')
+        tbl.integer('count')
+
+
     }) 
 };
 
