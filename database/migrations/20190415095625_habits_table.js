@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
         tbl.date('createdAt')
         tbl.date('lastCompleted')
         tbl.integer('count')
+        tbl.timestamps(true,true)
 
 
     }) 
