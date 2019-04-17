@@ -7,4 +7,5 @@ module.exports = {
 function addHabit(habit) {
     return db('habitss')
     .insert(habit)
+    .returning('id')
 }
