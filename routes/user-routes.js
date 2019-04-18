@@ -9,7 +9,6 @@ const bcrypt = require('bcryptjs');
 const { authenticate, generateToken } = require('../auth/authenticate');
 
 router.post('/register', (req, res) => {
-    console.log(req.body)
     let user = req.body
     const hash = bcrypt.hashSync(user.password, 10)
     user.password = hash;
