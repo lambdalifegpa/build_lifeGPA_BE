@@ -7,9 +7,9 @@ exports.up = function(knex, Promise) {
             .notNullable()
             .references('id')
             .inTable('users')
-        tbl.date('createdAt')
-        tbl.date('lastCompleted')
         tbl.integer('count')
+        tbl.boolean('completed')
+            .defaultTo(false)
         tbl.timestamps(true,true)
 
 
