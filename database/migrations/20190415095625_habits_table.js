@@ -11,6 +11,7 @@ exports.up = function(knex, Promise) {
         tbl.boolean('completed')
             .defaultTo(false)
         tbl.timestamps(true,true)
+        tbl.datetime('last_completed')
         
  
 
