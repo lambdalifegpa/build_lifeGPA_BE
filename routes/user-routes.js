@@ -9,7 +9,6 @@ const bcrypt = require('bcryptjs');
 const { authenticate, generateToken } = require('../auth/authenticate');
 
 router.post('/register', (req, res) => {
-    console.log(req.body)
     let user = req.body
     const hash = bcrypt.hashSync(user.password, 10)
     user.password = hash;
@@ -20,8 +19,8 @@ router.post('/register', (req, res) => {
     Users
         .addUser(req.body)
         .then(user => {
-            const token = generateToken(user);
-            res.status(201).json({user, token})
+            // const token = generateToken(user);
+            res.status(201).json(user)
         })
         .catch(err => {
             res.status(500).json(err)
@@ -39,7 +38,7 @@ router.post('/login', (req, res) => {
   
           res.status(200).json({
             message: `Welcome ${user.username}!`,
-            token,
+            token, id: user.id
           });
         } else {
           res.status(401).json({ message: 'Invalid Credentials' });
