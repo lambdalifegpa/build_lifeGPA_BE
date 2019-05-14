@@ -4,6 +4,8 @@ Technical Design Document:
 https://docs.google.com/document/d/1CNaNC5_B6Zww9U8VaxlhHUduE__uneONnWZMGUZ7yXU/edit
 
 
+Heroku Deployment: https://lifegpadb.herokuapp.com/
+
 | Method |        Endpoint        |             Action |                              Front-end Request                               |                   Backend Response                   |
 | ------ | :--------------------: | -----------------: | :--------------------------------------------------------------------------: | :--------------------------------------------------: |
 | POST   |  'api/users/register'  |             Signup | {username: String, password: String, first_name: String, last_name: String } |         {username: String, user_id: Integer}         |
